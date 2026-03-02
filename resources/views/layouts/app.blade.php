@@ -148,7 +148,7 @@
     <nav class="md:hidden fixed bottom-4 left-4 right-4 z-40 bg-unmaris-900/95 backdrop-blur-2xl border border-unmaris-800 shadow-[0_8px_30px_rgba(11,17,43,0.4)] rounded-[2rem] px-6 py-2 flex justify-between items-center">
 
         <!-- Tombol Beranda -->
-        <a href="{{ route('dashboard') }}" wire:navigate class="flex flex-col items-center justify-center w-14 h-14 rounded-2xl transition-all {{ request()->routeIs('dashboard') ? 'text-sunmaris-400' : 'text-unmaris-300 hover:text-white' }}">
+        <a href="{{ route('dashboard') }}" wire:navigate class="flex flex-col items-center justify-center w-14 h-14 rounded-2xl transition-all {{ request()->routeIs('dashboard') ? 'text-sunmaris-400' : 'text-unmaris-100 hover:text-white' }}">
             <svg class="w-6 h-6 mb-1 {{ request()->routeIs('dashboard') ? 'stroke-[2.5px]' : 'stroke-2' }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
             </svg>
@@ -163,7 +163,7 @@
         </a>
 
         <!-- Tombol Menu Lainnya (Buka Bottom Sheet) -->
-        <button @click="mobileMenuOpen = true" class="flex flex-col items-center justify-center w-14 h-14 rounded-2xl transition-all text-unmaris-300 hover:text-white focus:outline-none">
+        <button @click="mobileMenuOpen = true" class="flex flex-col items-center justify-center w-14 h-14 rounded-2xl transition-all text-unmaris-100 hover:text-white focus:outline-none">
             <svg class="w-6 h-6 mb-1 stroke-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
