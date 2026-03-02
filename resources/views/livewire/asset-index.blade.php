@@ -22,12 +22,14 @@
                 <option value="lost">Hilang</option>
             </select>
         </div>
+        @can('edit-assets')
         <a href="{{ route('assets.create') }}" wire:navigate class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-unmaris-600 hover:bg-unmaris-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-unmaris-500 transition-colors">
             <svg class="-ml-1 mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
             Tambah Aset Baru
         </a>
+        @endcan
     </div>
 
     <div class="bg-white shadow-sm ring-1 ring-black ring-opacity-5 md:rounded-lg overflow-hidden">
@@ -82,7 +84,11 @@
                             </span>
                         </td>
                         <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                            <button class="text-unmaris-600 hover:text-unmaris-900 mr-3 transition-colors">Edit</button>
+                            @can('edit-assets') 
+                            <a href="{{ route('assets.edit', $asset->id) }}" wire:navigate class="text-unmaris-600 hover:text-unmaris-900 mr-3 font-semibold transition-colors">
+                                Edit
+                            </a>
+                            @endcan
                             <a href="{{ route('assets.history', $asset->id) }}" wire:navigate class="text-gray-500 hover:text-unmaris-600 font-semibold transition-colors">
                                 Riwayat
                             </a>
