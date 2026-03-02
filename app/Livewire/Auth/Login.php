@@ -9,7 +9,7 @@ use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
 
 #[Title('Login - SI Aset UNMARIS')]
-#[Layout('components.layouts.auth')] // Gunakan layout tanpa sidebar
+#[Layout('components.layouts.auth')] 
 class Login extends Component
 {
     #[Validate('required|email')]

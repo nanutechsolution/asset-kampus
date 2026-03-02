@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('asset_categories', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('code', 20)->unique()->comment('Contoh: ELK, MBL, KND');
             $table->string('name', 100);
             $table->text('description')->nullable();

@@ -1,6 +1,8 @@
 <?php
 
 use App\Livewire\Auth\Login;
+use App\Livewire\CategoryIndex;
+use App\Livewire\LocationIndex;
 use App\Livewire\UserForm;
 use App\Livewire\UserIndex;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +33,8 @@ Route::middleware('auth')->group(function () {
     // Rute Aset
     Route::get('/assets', \App\Livewire\AssetIndex::class)->name('assets.index');
     Route::get('/assets/{asset}/history', \App\Livewire\AssetHistory::class)->name('assets.history');
+    Route::get('/categories', CategoryIndex::class)->name('categories.index');
+    Route::get('/locations', LocationIndex::class)->name('locations.index');
 
     // Rute khusus Operator/Admin
     Route::middleware('can:edit-assets')->group(function () {

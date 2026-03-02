@@ -9,13 +9,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('asset_trackings', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             
             // Jika aset dihapus permanen, riwayatnya juga ikut terhapus (cascade)
-            $table->foreignId('asset_id')->constrained('assets')->cascadeOnDelete();
+            $table->foreignUuid('asset_id')->constrained('assets')->cascadeOnDelete();
             
             // Relasi ke user yang melakukan perubahan (menggunakan tabel users bawaan Laravel)
-            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
+            $table->foreignUuid('user_id')->nullable()->constrained('users')->nullOnDelete();
             
             $table->string('action', 50)->comment('created, updated, moved, status_changed');
             $table->text('notes')->nullable();
