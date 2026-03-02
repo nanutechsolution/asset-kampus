@@ -20,10 +20,10 @@ class AssetEdit extends Component
     public string $name = '';
 
     #[Validate('required|exists:asset_categories,id')]
-    public ?int $category_id = null;
+    public ?string $category_id = null;
 
     #[Validate('required|exists:locations,id')]
-    public ?int $location_id = null;
+    public ?string $location_id = null;
 
     #[Validate('required|date|before_or_equal:today')]
     public string $purchase_date = '';
