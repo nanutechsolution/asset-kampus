@@ -82,8 +82,10 @@
                             </span>
                         </td>
                         <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                            <button class="text-unmaris-600 hover:text-unmaris-900 mr-3">Edit</button>
-                            <button class="text-unmaris-600 hover:text-unmaris-900">Riwayat</button>
+                            <button class="text-unmaris-600 hover:text-unmaris-900 mr-3 transition-colors">Edit</button>
+                            <a href="{{ route('assets.history', $asset->id) }}" wire:navigate class="text-gray-500 hover:text-unmaris-600 font-semibold transition-colors">
+                                Riwayat
+                            </a>
                         </td>
                     </tr>
                     @empty

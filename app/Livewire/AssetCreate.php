@@ -68,7 +68,7 @@ class AssetCreate extends Component
 
         } catch (Exception $e) {
             // Tangkap error jika database gagal/rollback
-            session()->flash('error', 'Terjadi kesalahan sistem: ' . $e->getMessage());
+            $this->dispatch('notify', type: 'error', message: 'Terjadi kesalahan saat menyimpan data aset.');
         }
     }
 
