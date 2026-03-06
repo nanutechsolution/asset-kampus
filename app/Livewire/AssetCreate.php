@@ -18,10 +18,10 @@ class AssetCreate extends Component
     public string $name = '';
 
     #[Validate('required|exists:asset_categories,id')]
-    public ?int $category_id = null;
+    public ?string $category_id = "null";
 
     #[Validate('required|exists:locations,id')]
-    public ?int $location_id = null;
+    public ?string $location_id = "null";
 
     // Memastikan tanggal beli tidak lebih dari hari ini
     #[Validate('required|date|before_or_equal:today')]
@@ -65,7 +65,6 @@ class AssetCreate extends Component
 
             // 4. Redirect kembali ke halaman Index menggunakan mode SPA (navigate: true)
             return $this->redirectRoute('assets.index', navigate: true);
-
         } catch (Exception $e) {
             // Tangkap error jika database gagal/rollback
             $this->dispatch('notify', type: 'error', message: 'Terjadi kesalahan saat menyimpan data aset.');
