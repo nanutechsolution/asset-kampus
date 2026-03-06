@@ -44,10 +44,15 @@ Route::middleware('auth')->group(function () {
 
     // Rute Print (Dikeluarkan dari grup can agar pimpinan/viewer bisa print label)
     Route::get('/assets/{asset}/print', [\App\Http\Controllers\PrintLabelController::class, 'printSingle'])->name('assets.print');
-
+    Route::get('/survei/builder/create', \App\Livewire\SurveyEditor::class)->name('survey.create');
+    Route::get('/survei/builder/{survey}/edit', \App\Livewire\SurveyEditor::class)->name('survey.edit');
+    Route::get('/survei/hasil', \App\Livewire\SurveyIndex::class)->name('survey.results');
     Route::middleware('can:manage-users')->group(function () {
         Route::get('/users', UserIndex::class)->name('users.index');
-        Route::get('/users/create', UserForm::class)->name('users.form'); // Create
-        Route::get('/users/{user}/edit', UserForm::class)->name('users.form'); // Edit menggunakan form yang sama
+        Route::get('/users/create', UserForm::class)->name('users.create');
+        Route::get('/users/{user}/edit', UserForm::class)->name('users.edit');
     });
 });
+
+
+Route::get('/survei/{survey}', \App\Livewire\SurveyForm::class)->name('survey.show');

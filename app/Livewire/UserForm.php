@@ -23,6 +23,7 @@ class UserForm extends Component
 
     public function mount(?User $user = null)
     {
+        // Jika parameter user terisi (ada data dari DB berdasarkan UUID)
         if ($user && $user->exists) {
             $this->user = $user;
             $this->isEdit = true;
@@ -63,7 +64,7 @@ class UserForm extends Component
                 'email'     => $this->email,
                 'role'      => $this->role,
                 'is_active' => $this->is_active,
-                'password  '=> $this->password,
+                'password'  => $this->password,
             ]);
 
             session()->flash('success', $this->isEdit ? 'Data pengguna diperbarui.' : 'Pengguna baru berhasil ditambahkan.');

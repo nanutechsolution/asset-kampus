@@ -78,7 +78,6 @@ class AssetEdit extends Component
 
             session()->flash('success', 'Data aset berhasil diperbarui.');
             return $this->redirectRoute('assets.index', navigate: true);
-
         } catch (Exception $e) {
             $this->dispatch('notify', type: 'error', message: 'Gagal memperbarui: ' . $e->getMessage());
         }
