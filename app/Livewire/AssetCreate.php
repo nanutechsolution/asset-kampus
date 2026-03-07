@@ -18,10 +18,10 @@ class AssetCreate extends Component
     public string $name = '';
 
     #[Validate('required|exists:asset_categories,id')]
-    public ?string $category_id = "null";
+    public ?string $category_id = "";
 
     #[Validate('required|exists:locations,id')]
-    public ?string $location_id = "null";
+    public ?string $location_id = "";
 
     // Memastikan tanggal beli tidak lebih dari hari ini
     #[Validate('required|date|before_or_equal:today')]
